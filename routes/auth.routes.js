@@ -11,7 +11,8 @@ const REDIRECT_URI = process.env.SPOTIFY_REDIRECT_URI;
 
 // 🔹 1️⃣ Route to ask authentification with Spotify
 router.get("/login", (req, res) => {
-  const scope = "user-read-private user-read-email";
+  const scope =
+    "user-read-private user-read-email user-read-recently-played user-top-read";
   const authUrl = `https://accounts.spotify.com/authorize?${querystring.stringify(
     {
       response_type: "code",
